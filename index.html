@@ -68,6 +68,7 @@ nav.scrolled { border-color: rgba(0,212,200,0.15); }
   border-left: 1px solid var(--border);
 }
 .nav-left { display: flex; align-items: center; }
+.nav-actions { display: flex; align-items: center; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
   font-size: 13.5px; font-weight: 500; color: var(--text-dim);
@@ -559,8 +560,10 @@ footer {
     <a href="#modules">Modules</a>
     <a href="#start">Get Started</a>
   </div>
-  <a href="https://qa.glosonline.com/" target="_blank" rel="noopener"><button class="btn-login">Login</button></a>
-  <a href="./contact.html"><button class="btn-demo">Book a Demo</button></a>
+  <div class="nav-actions">
+    <a href="https://qa.glosonline.com/" target="_blank" rel="noopener"><button class="btn-login">Login</button></a>
+    <a href="./contact.html"><button class="btn-demo">Book a Demo</button></a>
+  </div>
 </nav>
 
 <!-- ══════════ HERO ══════════ -->
