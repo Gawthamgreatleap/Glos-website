@@ -515,9 +515,10 @@ footer {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
-  nav { grid-template-columns: 1fr auto; height: auto; min-height: 66px; }
+  nav { grid-template-columns: 1fr auto; height: auto; min-height: 54px; align-items: center; }
   .nav-tagline { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-logo-img { height: 26px; }
+  .nav-toggle { display: flex; width: 26px; height: 26px; }
   .nav-links, .nav-actions {
     grid-column: 1 / -1; justify-self: stretch; display: flex; flex-direction: column;
     align-items: stretch; max-height: 0; overflow: hidden; opacity: 0; gap: 0;
