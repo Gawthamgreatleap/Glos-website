@@ -18,5 +18,5 @@ jobs:
           username: ${{ secrets.DO_USERNAME }}
           key: ${{ secrets.DO_SSH_KEY }}
           port: 22
-          source: "*.html"
+          source: "*.html,sitemap.xml,robots.txt"
           target: "/var/www/glosonline-site"
