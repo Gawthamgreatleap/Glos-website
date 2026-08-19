@@ -389,7 +389,7 @@ footer {
               <option value="+60">🇲🇾 +60</option>
               <option value="+61">🇦🇺 +61</option>
             </select>
-            <input type="tel" id="phone" placeholder="98765 43210" autocomplete="tel" maxlength="15">
+            <input type="tel" id="phone" placeholder="98765 43210" autocomplete="tel" maxlength="15" inputmode="numeric">
           </div>
           <div class="error-msg" id="phone-err">Please enter a valid phone number.</div>
         </div>
@@ -511,6 +511,21 @@ document.querySelectorAll('.nav-links a, .nav-actions a').forEach(link => {
     nav.classList.remove('mobile-open');
     navToggle.setAttribute('aria-expanded', 'false');
   });
+});
+
+// Enforce max length on type and paste (maxlength attr alone can be bypassed on paste in some browsers)
+['name', 'email', 'phone', 'company'].forEach(id => {
+  const el = document.getElementById(id);
+  const limit = parseInt(el.getAttribute('maxlength'), 10);
+  el.addEventListener('input', () => {
+    if (el.value.length > limit) el.value = el.value.slice(0, limit);
+  });
+});
+
+// Phone field: digits (and spaces) only, no letters or symbols
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', () => {
+  phoneInput.value = phoneInput.value.replace(/[^\d ]/g, '');
 });
 
 function validate() {
